@@ -4,14 +4,13 @@
   "module": "src/index.tsx",
   "type": "module",
   "scripts": {
-    "build:node": "bun build src/index.tsx --target node --outdir build --minify",
-    "build:bun": "bun build src/index.tsx --target bun --outdir build --minify",
-    "pre-run": "[ -f build/yoga.wasm ] || cp node_modules/yoga-wasm-web/dist/yoga.wasm build/",
+    "build:node": "bun build src/index.tsx --target node --outdir build --minify && bun run post-build",
+    "build:bun": "bun build src/index.tsx --target bun --outdir build --minify && bun run post-build",
+    "post-build": "[ -f build/yoga.wasm ] || cp node_modules/yoga-wasm-web/dist/yoga.wasm build/",
     "run:bun": "bun ./build/index.js",
     "run:node": "node ./build/index.js",
-    "pre-compile": "bun src/shim.ts",
-    "compile": "bun build build/index.js --compile --outfile build/bin/kazu",
-    "post-compile": "cp node_modules/yoga-wasm-web/dist/yoga.wasm build/bin"
+    "compile": "bun build --compile src/index.tsx --outfile build/bin/kazu",
+    "post-compile": "[ -f build/bin/yoga.wasm ] || cp node_modules/yoga-wasm-web/dist/yoga.wasm build/bin/"
   },
   "dependencies": {
     "@types/node": "^22.10.7",
