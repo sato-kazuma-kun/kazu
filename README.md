@@ -17,21 +17,20 @@ To build:
 ```bash
 bun run build:node
 ```
-### OR
+#### OR
 ```bash
 bun run build:bun
 ```
 
-To run: 
-### Run this only once initially:  `bun run pre-run`
+To run:
 ```bash
 bun run run:bun
 ```
-### OR
+#### OR
 ```bash
 bun run run:node
 ```
 
 
-## Known bugs: 
-### 1. Does not work if compiled using --compile flag when using bun. Refer to this [Github Issues](https://github.com/oven-sh/bun/issues/13405).
+## Known issues: 
+### 1. Does not work if compiled using --compile flag when using bun. Refer to this [Github Issue](https://github.com/oven-sh/bun/issues/13405).
