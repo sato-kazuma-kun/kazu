@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-async function main() {
+export default async function main() {
     // Resolve config.json path relative to the runtime location
     const configPath = join(__dirname, 'config.json');
 
@@ -35,6 +35,4 @@ async function main() {
     // Render main app with development directory
     render(<CLI configPath={configPath} developmentDir={developmentDir} />);
 }
-
-main().catch(console.error);
 
