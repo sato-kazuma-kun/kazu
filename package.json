@@ -1,15 +1,15 @@
 {
   "name": "kazu",
   "version": "1.0.1",
-  "module": "src/index.tsx",
+  "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "build:node": "bun build src/index.tsx --target node --outdir build --minify && bun run post-build",
-    "build:bun": "bun build src/index.tsx --target bun --outdir build --minify && bun run post-build",
+    "build:node": "bun build src/index.ts --target node --outdir build --minify && bun run post-build",
+    "build:bun": "bun build src/index.ts --target bun --outdir build --minify && bun run post-build",
     "post-build": "[ -f build/yoga.wasm ] || cp node_modules/yoga-wasm-web/dist/yoga.wasm build/",
     "run:bun": "bun ./build/index.js",
     "run:node": "node ./build/index.js",
-    "compile": "bun build --compile src/index.tsx --outfile build/bin/kazu",
+    "compile": "bun build --compile src/index.ts --outfile build/bin/kazu",
     "post-compile": "[ -f build/bin/yoga.wasm ] || cp node_modules/yoga-wasm-web/dist/yoga.wasm build/bin/"
   },
   "dependencies": {
